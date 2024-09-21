@@ -1,0 +1,24 @@
+/* Media queries to define different styles for various screen sizes */
+/* Media queries allow you to create responsive designs that adapt to different devices and screen resolutions */
+
+/* Media query targets screens with a minimum width of 640 pixels */
+@media screen and (min-width:640){
+    #header h1{
+        font-size: 50px;
+    }
+}
+
+/* Media query targets screens with a minimum width of 768 pixels */
+@media screen and (min-width:768){
+    
+}
+
+/* Media query targets screens with a minimum width of 1024 pixels */
+@media screen and (min-width:1024){
+    
+}
+
+/* Media query targets screens with a minimum width of 1280 pixels */
+@media screen and (min-width:1280){
+    
+}

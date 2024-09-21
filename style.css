@@ -1,0 +1,225 @@
+body{
+    font-family: "Nunito Sans", sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-family: "Montserrat", sans-serif;
+}
+
+:root{
+    --main-color: rgb(230, 95, 120);
+}
+
+/* ========================= Navbar ========================= */
+nav{
+    z-index: 999;
+    /* Sets the <z-index> of the navigation element to 999, ensuring it appears on top of other elements on the page, which is useful for making the navigation bar always visible, even when scrolling */
+}
+
+.navbar-nav .nav-link.active{
+    color: var(--main-color);
+    font-weight: bold;
+}
+
+.nav-link:hover{
+    color: var(--main-color);
+}
+/* ========================= ****** ========================= */
+
+/* ========================= Header ========================= */
+#header{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url("images/header-bg.jpg");
+    /* <background-image>: Sets a background image with a linear gradient overlay for a fading effect and the specified URL */
+    background-size: cover;
+    /* <background-size>: Covers the entire background area, even if the image is larger or smaller */
+    background-position: center;
+    /* <background-position>: Centers the background image vertically and horizontally */
+    min-height: 100vh;
+    /* <min-height>: Sets the minimum height to 100% of the viewport height */
+}
+
+#header h1{
+    font-size: 65px;
+    /* <font-size>: Sets the font size of the heading */
+}
+
+#header .header-txt button{
+    color: #ffff;
+    /* <color>: Sets the text color of the button */
+}
+
+#header .header-txt button:hover{
+    background-color: #ffff;
+    /* <background-color>: Changes the background color on hover */
+    color: #000;
+    /* <color>: Changes the text color on hover */
+}
+
+#header .header-shape{
+    position: absolute;
+    /* <position: absolute;> Positions the element relative to its nearest positioned ancestor, allowing for precise placement */
+    left: 50%; bottom: 20px;
+    transform: translate(-50%);
+    /* <transform: translate(-50%);>: Centers the element horizontally and vertically */
+    width: 35px; height: 80px;
+    border: 2px solid #fff;
+    /* <border>: Adds a border around the shape */
+    border-radius: 20px;
+    /* <border-radius>: Rounds the corners of the shape */
+    /* Animation of .header-shape in #header */
+    animation-name: shape-animation;
+    /* <animation>: Applies an animation with specified duration, iteration count, and direction */
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes shape-animation{
+/* <@keyframes shape-animation>: Defines the keyframes for the animation. */
+    0%{bottom: 20px;}
+    25%{bottom: 25px;}
+    50%{bottom: 30px;}
+    75%{bottom: 35px;}
+    100%{bottom: 40px;}
+}
+
+#header .header-shape:after{
+    content:'';
+    /* <content:'';>: Creates a pseudo-element before the element */
+    position: absolute;
+    /* <position: absolute;>: Positions the pseudo-element relative to its parent */
+    top: 70%; left: 50%;
+    transform: translate(-50%);
+    width: 5px; height: 8px;
+    background-color: #fff;
+    /* <background-color>: Sets the background color of the element */
+}
+
+.settings{
+    position: fixed;
+    /* <position: fixed;>: Positions the element relative to the viewport, making it stay in place even when scrolling */
+    top: 20%; left: 0;
+    width: 30px; height: 30px;
+    background-color: #3C3C3C;
+    border-radius: 0px 5px 5px 0px;
+    /* <border-radius>: Rounds the corners of the element */
+}
+/* ========================= ****** ========================= */
+
+/* ========================= About ========================= */
+#about .about-info ul li{
+    width: 40px; height: 40px;
+    border: 3px solid #f1f1f1;
+    /* Applies a 3-pixel solid border with the color #f1f1f1 to the list items */
+    border-radius: 50%;
+    /* Creates a rounded border shape for the list items, making them circular */
+    display: flex;
+    /* Sets the display property of the list items to flex, enabling flexible box layout */
+    justify-content: center;
+    /* Aligns the content within the list items horizontally to the center */
+    align-items: center;
+    /* Aligns the content within the list items vertically to the center */
+    transition: border 0.2s;
+    /* Applies a transition effect to the border property, making changes to the border appear smoothly over 0.2 seconds. */
+}
+
+#about .about-info ul li:hover{
+    border: 3px solid var(--main-color);
+}
+
+#about .about-info ul li i{
+    transition: color 0.2s;
+}
+
+#about .about-info ul li:hover i{
+    color: var(--main-color);
+}
+/* ========================= ***** ========================= */
+
+/* ========================= Clients ========================= */
+#client{
+    background-color: #f1f1f1;
+}
+
+.carousel-indicators{
+    bottom: -35px;
+}
+
+.carousel-indicators [data-bs-target]{
+    height: 8px;
+    background-color: var(--main-color);
+    border-radius: 40%;
+}
+/* ========================= ****** ========================= */
+
+/* ========================= Portfolio ========================= */
+/* ========== Navbar @ Portfolio ========== */
+.nav-tabs{
+    border: none;
+    display: flex;
+    justify-content: center;
+}
+
+/* 1st tab >> .nav-link.active */
+.nav-tabs .nav-link.active{
+    border-color: transparent;
+    background-color: var(--main-color);
+    color: #fff;
+    border-radius: 20px;
+}
+
+.nav-tabs .nav-link{
+    color: #333;
+}
+
+.nav-tabs .nav-link:hover{
+    border-color: transparent;
+}
+
+/* ========== Layout @ Portfolio ========== */
+#portfolio .item .layer{
+    position: absolute;
+    top: 100%; left: 0;
+    width: 100%; height: 100%;
+    transition: top 0.4s;
+    z-index: 5;
+}
+
+#portfolio .item:hover .layer{
+    top: 0;
+}
+
+#portfolio .item img{
+    transition: transform 0.4s;
+}
+
+#portfolio .item:hover img{
+    transform: scale(1.4);
+}
+
+#portfolio .item::after{
+    content:'';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: #000;
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+
+#portfolio .item:hover::after{
+    opacity: 0.5;
+}
+/* ========================= ****** ========================= */
+
+/* ========================= Blog ========================= */
+#blog{
+    background-color: #f1f1f1;
+}
+/* ========================= **** ========================= */
+
+/* ========================= Contact ========================= */
+#contact .name-email input{
+    width: 48%;
+}
+/* ========================= ******* ========================= */
